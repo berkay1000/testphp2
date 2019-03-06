@@ -18,6 +18,7 @@
 
 
 
+
 <div class="container">
 
     <div class="row">
@@ -29,6 +30,7 @@
         <a href="www.google.com">test</a>
 
             <a href="www.google.com">test</a>
+
 
         </div>
 
@@ -54,9 +56,14 @@
         <div class="col-sm-4 col-xl-4">
             <!-- hier kommt die sqlausgabe rein -->
             <h3>Column 3</h3>
-            <p>Lorem ipsum dolor..</p>
+            <p>Losssssem ipsum dolor..</p>
             <p>Ut enim ad..</p>
         </div>
+
+    </div>
+
+    <div>
+        <?php echo  "hallo php"; ?>
     </div>
 </div>
 
