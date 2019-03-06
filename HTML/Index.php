@@ -41,17 +41,19 @@
 
 
     <div class="row">
-        <div id="navbar_left" class="col-sm-4 col-xl-4">
+        <div id="navbar_left" class="col-sm-12 col-xl-2">
             <h3>was 1</h3>
             <p>Hilssssfe</p>
             <p>Impressum</p>
         </div>
-        <div class="col-sm-4 col-xl-4">
+        <div class="col-sm-6 col-xl-6">
 
             <!--HIer kommt ein eingabefeld und 2 Buttons für clear und reset -->
-            <h3>Column 2</h3>
-            <p>Lorem ipsum dolor..</p>
-            <p>Ut enim ad..</p>
+            <form></form>
+            <textarea name="sqlcode" rows="4" cols="50" > </textarea>
+            <input type="submit">
+            <input type="reset">
+
         </div>
         <div class="col-sm-4 col-xl-4">
             <!-- hier kommt die sqlausgabe rein -->
