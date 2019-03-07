@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>SQL-tool</title>
@@ -10,7 +10,21 @@
     <script src="../js/bootstrap.bundle.js"></script>
     <script src="../js/bootstrap.js"></script>
     <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/sqlcheck.js"></script>
+    <!--<script src="../js/sqlcheck.js"></script>-->
+
+    <script type="text/javascript">
+        function selectcheck(textareainput) {
+    console.log("in select");
+    alert("hey");
+
+
+    //if (textareainput.contains("select")){
+    //return true;
+   // }
+
+
+    }</script>
+
 
 
 </head>
@@ -49,10 +63,13 @@
         <div class="col-sm-6 col-xl-6">
 
             <!--HIer kommt ein eingabefeld und 2 Buttons für clear und reset -->
-            <form></form>
+            <form action="" method="post" onsubmit="return selectcheck(this)"></form>
             <textarea name="sqlcode" rows="4" cols="50" > </textarea>
-            <input type="submit">
-            <input type="reset">
+            <input type="button" name="test" value="testerr" onclick="selectcheck()">
+            <input type="submit" name="absenden" value="abschicken">
+            <input type="reset" name="reset" value="löschen">
+            <!--- zieladdresse soll http://lab.mi.hs-offenburg.de/lab_tkdb/sqldemo/06.php sein
+            und es ist POST-->
 
         </div>
         <div class="col-sm-4 col-xl-4">
