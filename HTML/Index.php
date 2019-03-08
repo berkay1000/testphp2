@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+
     <meta charset="UTF-8">
     <title>SQL-tool</title>
 
@@ -21,42 +22,30 @@ document.getElementsByName("adc").value=1;
 }
 
     </script>
+
     <script type="text/javascript">
 
-        function aendereausgabebereich(formu)
-        {
-            formu.getElementById("adc").value=1;
+        function aendereausgabebereich(formu) {
+            formu.getElementById("adc").value = 1;
+            return true;
 
-            if (formu=="")
-            {
-                document.getElementById("ausgabebereich").innerHTML="keine Eingabe";
-                return;
-            }
-            if (window.XMLHttpRequest)
-            {
-                // AJAX nutzen mit IE7+, Chrome, Firefox, Safari, Opera
-                xmlhttp=new XMLHttpRequest();
-            }
-            else
-            {
-                // AJAX mit IE6, IE5
-                xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
-            }
-            xmlhttp.onreadystatechange=function()
-            {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    document.getElementById("ausgabebereich").innerHTML = xmlhttp.responseText;
-                }
-
-                xmlhttp.open("GET","http://lab.mi.hs-offenburg.de/lab_tkdb/sqldemo/06.php"+inhalt,true);
-                xmlhttp.send();
-                }
-            }
         }
 
     </script>
 
-
+    <script type="text/javascript">
+ //   function reqListener () {
+/*
+console.log("hey");
+        var oReq = new XMLHttpRequest();
+        oReq.addEventListener("load", reqListener);
+        oReq.open("POST", "http://lab.mi.hs-offenburg.de/lab_tkdb/sqldemo/06.php");
+        oReq.send();
+        console.log(oReq);
+        //document.getElementById("ausgabebereich").innerHTML
+ //Ich brauche zugangsdaten für info.mi, um ein File von dort aus zu testen
+ //       return false;  }*/
+</script>
 
 
 </head>
@@ -68,14 +57,14 @@ document.getElementsByName("adc").value=1;
 <div class="container">
 
     <div class="row">
-        <div class="col-sm-4 col-lg-4">
-        <img src="../bilder/handOBENLINKS.png" height="141" width="134"/>
+        <div class="col-sm-4 col-xl-2">
+        <img src="../bilder/handOBENLINKS.png" height="141" width="134" style="padding-left: 0px;"/>
         </div>
 
         <div class="col-sm-6 col-lg-4">
-        <a href="www.google.com">test</a>
+        <h3><a href="www.google.com">test</a>
 
-            <a href="www.google.com">test</a>
+           <a href="www.google.com">test</a></h3>
 
 
         </div>
@@ -88,29 +77,29 @@ document.getElementsByName("adc").value=1;
 
     <div class="row">
         <div id="navbar_left" class="col-sm-12 col-xl-2">
-            <h3>was 1</h3>
-            <p>Hilssssfe</p>
+            <h3 class="col-xl-12">SQL-Tool</h3>
+            <p><a href="hilfe.html">Hilfe</a></p>
             <p>Impressum</p>
         </div>
-        <div class="col-sm-6 col-xl-6">
+        <div class="col-sm-6 col-xl-4">
 
             <!--HIer kommt ein eingabefeld und 2 Buttons für clear und reset -->
-            <form name="formular" action="http://lab.mi.hs-offenburg.de/lab_tkdb/sqldemo/06.php" method="post" onsubmit="return aendereausgabebereich(this)">
+            <form name="formular" action="" method="post" onsubmit="return reqListener()">
+               <!-- onsubmit="return aendereausgabebereich(this)"-->
+                <input type="hidden" name="pw" value="">
+                <textarea name="advancedString" id="ads"  rows="4" cols="35" > </textarea>
+                <input type="hidden" name="advancedCheck" value="1">
 
-                <input type="text" name="pw" value="">
-                <textarea name="advancedString" id="ads"  rows="4" cols="50" > </textarea>
 
-
-            <input type="submit" name="advancedCheck" id="adc" value="1" >
+            <input type="submit" name="absenden" id="adc" value="senden" >
             <input type="reset" name="reset" value="löschen">
             <!--- zieladdresse soll http://lab.mi.hs-offenburg.de/lab_tkdb/sqldemo/06.php sein
             und es ist POST-->
             </form>
 
         </div>
-        <div class="col-sm-4 col-xl-4" id="ausgabebereich">
+        <div class="col-sm-4 col-xl-6" id="ausgabebereich">
             <!-- hier kommt die sqlausgabe rein -->
-
 
 
             //tabellenausgabe des sqls
@@ -119,6 +108,7 @@ document.getElementsByName("adc").value=1;
 
 
         </div>
+
 
     </div>
 
