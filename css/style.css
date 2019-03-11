@@ -3,3 +3,17 @@ background-color: #cccccc;
 border-color: #ffffff;
 border: 4px;
 }
+#navbar_oben {
+    padding-left: 30px;
+    color: #1E3287;
+    color: rgb(30,50,135);
+    font-family: arial;
+    font-size: 10pt;
+    font-weight: bold;
+    text-decoration: none;
+    text-underline: none;
+    line-height: normal;
+    margin-right: 7px;
+
+
+}
